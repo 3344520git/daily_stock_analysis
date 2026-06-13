@@ -1290,7 +1290,6 @@ class DataFetcherManager:
                             fallback_to=fallback_to,
                             record_count=0,
                         )
-                        self._record_daily_source_failure(fetcher, market, "empty result")
                     except Exception as e:
                         error_type, error_reason = summarize_exception(e)
                         error_msg = f"[{fetcher.name}] ({error_type}) {error_reason}"
@@ -1361,7 +1360,6 @@ class DataFetcherManager:
                     fallback_to=fallback_to,
                     record_count=0,
                 )
-                self._record_daily_source_failure(fetcher, market, "empty result")
 
             except Exception as e:
                 error_type, error_reason = summarize_exception(e)
